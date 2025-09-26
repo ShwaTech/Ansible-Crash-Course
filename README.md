@@ -152,7 +152,7 @@ ansible-playbook git-install.yml --list-host
 ```
 
 ```bash
-## Let's Install Git From Control Server To All Managed Servers
+## Let's Install Maven and Java From Control Server To All Managed Servers
 
 sudo su ansible
 
@@ -168,7 +168,7 @@ ansible-playbook maven-java-install.yml --list-host
 ```
 
 ```bash
-## Let's Install Git From Control Server To All Managed Servers
+## Let's Host a Website From Control Server To Managed Server (webservers)
 
 sudo su ansible
 
@@ -181,4 +181,24 @@ ansible-playbook website-hosting.yml --syntax-check
 ansible-playbook website-hosting.yml 
 
 ansible-playbook website-hosting.yml --list-host
+```
+
+```bash
+## Let's Learn Ansible Variables
+
+sudo su ansible
+
+cd ansible
+
+vi variables.yml # Then Paste the Configuration
+
+ansible-playbook variables.yml --syntax-check
+
+# If You have not defined your variables inside ansible playbiik
+ansible-playbook variables.yml --extra-vars package_name=httpd
+
+# If You have not defined your variables inside ansible playbiik
+ansible-playbook variables.yml
+
+ansible-playbook variables.yml --list-host
 ```
