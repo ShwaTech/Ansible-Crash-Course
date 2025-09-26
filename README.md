@@ -150,3 +150,19 @@ ansible-playbook git-install.yml
 
 ansible-playbook git-install.yml --list-host
 ```
+
+```bash
+## Let's Install Git From Control Server To All Managed Servers
+
+sudo su ansible
+
+cd ansible
+
+vi maven-java-install.yml # Then Paste the Configuration
+
+ansible-playbook maven-java-install.yml --syntax-check
+
+ansible-playbook maven-java-install.yml 
+
+ansible-playbook maven-java-install.yml --list-host
+```
