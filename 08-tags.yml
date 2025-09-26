@@ -1,0 +1,24 @@
+---
+- hosts: webservers
+  become: true
+  vars:
+    package_name: httpd
+  tasks:
+  - name: httpd Server Installation
+    yum:
+      name: "{{package_name}}"
+      state: latest
+    tags: [ install ]
+
+  - name: Copy vars.html
+    copy:
+      src: vars.html
+      dest: /var/www/html/index.html
+    tags: [ copy ]
+
+  - name: Start httpd Server
+    service:
+      name: "{{package_name}}"
+      state: started
+    tags: [ start ]
+...

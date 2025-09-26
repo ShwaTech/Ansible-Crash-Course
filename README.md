@@ -227,3 +227,28 @@ cat vault.yml
 # If It's Encrypted and You want to modify on it
 ansible-vault edit vault.yml       # Enter The Password You Saved
 ```
+
+```bash
+## Let's Learn Ansible Tags
+
+sudo su ansible
+
+cd ansible
+
+vi tags.yml # Then Paste the Configuration
+
+ansible-playbook tags.yml --syntax-check
+
+ansible-playbook tags.yml --list-tags
+
+# Run A Specific Playbook Via Tag Name
+ansible-playbook tags.yml --tags "install"
+
+ansible-playbook tags.yml --skip-tag "install"
+# OR
+ansible-playbook tags.yml --skip-tags "install"
+
+ansible-playbook tags.yml --tags "install, copy"
+
+ansible-playbook tags.yml --list-host
+```
