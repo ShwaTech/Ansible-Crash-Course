@@ -111,9 +111,11 @@ cd ansible
 
 vi first-playbook.yml  # Then Paste the Configuration
 
+ansible-playbook first-playbook.yml --syntax-check
+
 ansible-playbook first-playbook.yml
 
-ansible-playbook first-playbook.yml --syntax-check
+ansible-playbook file-creation.yaml --list-host
 ```
 
 ```bash
@@ -125,8 +127,26 @@ cd ansible
 
 vi file-creation.yaml # Then Paste the Configuration
 
+ansible-playbook file-creation.yaml --syntax-check
+
 ansible-playbook file-creation.yaml 
 # After That Command Go To The Managed Servers and Check You Will Find shwa.txt file
 
-ansible-playbook file-creation.yaml --syntax-check
+ansible-playbook file-creation.yaml --list-host
+```
+
+```bash
+## Let's Install Git From Control Server To All Managed Servers
+
+sudo su ansible
+
+cd ansible
+
+vi git-install.yml # Then Paste the Configuration
+
+ansible-playbook git-install.yml --syntax-check
+
+ansible-playbook git-install.yml 
+
+ansible-playbook git-install.yml --list-host
 ```
