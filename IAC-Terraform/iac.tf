@@ -15,10 +15,20 @@ resource "aws_security_group" "ssh_access" {
   description = "Allow SSH inbound traffic"
   vpc_id      = data.aws_vpc.default.id
 
+  # Allow SSH
   ingress {
     description = "SSH from anywhere"
     from_port   = 22
     to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  # Allow HTTP
+  ingress {
+    description = "HTTP from anywhere"
+    from_port   = 80
+    to_port     = 80
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
