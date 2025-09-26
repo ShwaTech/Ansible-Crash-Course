@@ -202,3 +202,28 @@ ansible-playbook variables.yml
 
 ansible-playbook variables.yml --list-host
 ```
+
+```bash
+## Let's Secure Our Ansible Commands Using Asible Vault
+
+sudo su ansible
+
+cd ansible
+
+vi vault.yml # Then Paste the Configuration
+
+# Encrypting Your File
+ansible-vault encrypt vault.yml    # Enter a Password and Remember it
+
+# Show Encryptrd (Unreadable) Content
+cat vault.yml
+
+# To Nicly See It Again Just Use
+ansible-vault view vault.yml       # Enter The Password You Saved
+
+# Decrypt it Again To Be Seen Usually - You Can run cat and see it well
+cat vault.yml
+
+# If It's Encrypted and You want to modify on it
+ansible-vault edit vault.yml       # Enter The Password You Saved
+```
