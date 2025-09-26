@@ -1,0 +1,17 @@
+---
+- hosts: webservers
+  become: true
+  tasks:
+  - name: httpd Server Installation
+    yum:
+      name: httpd
+      state: latest
+  - name: Copy index.html
+    copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Start httpd Server
+    service:
+      name: httpd
+      state: started
+...
