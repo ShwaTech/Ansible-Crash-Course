@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+  - name: file creation task
+    file:
+      path: /home/ansible/shwa.txt
+      state: touch
+...

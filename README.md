@@ -115,3 +115,18 @@ ansible-playbook first-playbook.yml
 
 ansible-playbook first-playbook.yml --syntax-check
 ```
+
+```bash
+## How Create Files From Control Server onto Mangaed One's With Ansible Playbook
+
+sudo su ansible
+
+cd ansible
+
+vi file-creation.yaml # Then Paste the Configuration
+
+ansible-playbook file-creation.yaml 
+# After That Command Go To The Managed Servers and Check You Will Find shwa.txt file
+
+ansible-playbook file-creation.yaml --syntax-check
+```
